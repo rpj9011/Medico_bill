@@ -1,0 +1,38 @@
+{
+  "name": "pharma-erp",
+  "version": "1.0.0",
+  "description": "PharmaDist ERP - Pharmaceutical Wholesale Distribution",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:backend":  "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "electron:dev": "electron .",
+    "electron:build": "electron-builder build",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend && npm install"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.4"
+  },
+  "devDependencies": {
+    "electron":         "^31.2.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.pharmaerp.desktop",
+    "productName": "PharmaDist ERP",
+    "directories": { "output": "dist-electron" },
+    "files": [
+      "electron/**/*",
+      "frontend/dist/**/*",
+      "backend/src/**/*",
+      "backend/node_modules/**/*",
+      "backend/package.json"
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "electron/icons/icon.ico"
+    },
+    "publish": [{ "provider": "github", "owner": "your-org", "repo": "pharma-erp" }]
+  }
+}

@@ -1,0 +1,13 @@
+@media print {
+  body * { visibility: hidden; }
+  .printArea, .printArea * { visibility: visible; }
+  .printArea {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+  }
+  .noPrint { display: none !important; }
+  @page { margin: 10mm; }
+}

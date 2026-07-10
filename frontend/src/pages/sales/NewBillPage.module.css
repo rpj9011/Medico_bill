@@ -1,0 +1,107 @@
+.page { display: flex; flex-direction: column; gap: var(--space-4); }
+.topBar { display: flex; align-items: center; justify-content: space-between; }
+.topActions { display: flex; gap: var(--space-3); }
+
+.headerGrid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label { font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; }
+.field input, .field select {
+  padding: 7px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  outline: none;
+}
+.field input:focus, .field select:focus { border-color: var(--color-primary-light); }
+
+.autocomplete { position: relative; }
+.suggestions {
+  position: absolute; z-index: 200; left: 0; right: 0; top: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  max-height: 220px; overflow-y: auto;
+  list-style: none; padding: 0; margin: 2px 0 0;
+}
+.suggestions li {
+  padding: 8px 12px; font-size: var(--text-sm);
+  cursor: pointer; border-bottom: 1px solid #f0f4f8;
+  display: flex; align-items: center; gap: var(--space-3);
+}
+.suggestions li:hover { background: #f0f8ff; }
+
+.linesWrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+.lineTable { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.lineTable th {
+  background: #f0f4f8; padding: 6px 6px;
+  font-weight: 600; color: var(--color-text-muted);
+  text-align: left; border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+}
+.lineTable td { padding: 4px 4px; border-bottom: 1px solid #f8fafc; vertical-align: middle; }
+.lineTable input, .lineTable select {
+  width: 100%; padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  background: transparent;
+  outline: none;
+}
+.lineTable input:focus, .lineTable select:focus {
+  border-color: var(--color-primary-light);
+  background: #fff;
+}
+.productCell { position: relative; min-width: 160px; }
+.num  { text-align: right; font-variant-numeric: tabular-nums; }
+.bold { font-weight: 600; }
+.readOnly { background: #f8f9fa !important; color: var(--color-text-muted); cursor: default; }
+.removeBtn {
+  background: none; border: none; color: #c0392b;
+  cursor: pointer; padding: 2px 5px; font-size: 12px; border-radius: 3px;
+}
+.removeBtn:hover { background: #fde8e8; }
+.dpcoBadge { background: #e74c3c; color: #fff; font-size: 10px; padding: 1px 5px; border-radius: 3px; margin-left: 4px; }
+.dpcoInput { border-color: #e67e22 !important; background: #fef9ee !important; }
+.addLine {
+  display: block; width: 100%; padding: 8px;
+  border: none; border-top: 1px solid var(--color-border);
+  background: #f8fafc; color: var(--color-primary);
+  font-size: var(--text-sm); font-weight: 600; cursor: pointer;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+.addLine:hover { background: #e8f4fd; }
+
+.totalsArea {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-5);
+  background: var(--color-surface); padding: var(--space-4);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+}
+.chargesGrid { display: flex; flex-direction: column; gap: var(--space-3); }
+.chargesGrid label { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+.chargesGrid input {
+  width: 120px; padding: 5px 8px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  text-align: right; font-size: var(--text-sm); outline: none;
+}
+.totalBox { min-width: 260px; }
+.totalRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 0; font-size: var(--text-sm);
+  border-bottom: 1px solid #f0f4f8;
+}
+.netRow { font-size: var(--text-base); font-weight: 700; padding: 8px 0; border-top: 2px solid var(--color-border); margin-top: 4px; }
+.balanceDue  { font-weight: 700; color: var(--color-danger); }
+.balancePaid { font-weight: 700; color: var(--color-accent); }

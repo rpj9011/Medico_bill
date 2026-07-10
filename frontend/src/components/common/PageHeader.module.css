@@ -1,0 +1,7 @@
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+.title   { font-size: var(--text-xl); font-weight: 700; }
+.subtitle{ font-size: var(--text-sm); color: var(--color-text-muted); margin-top: 2px; }
+.actions { display: flex; gap: var(--space-3); }

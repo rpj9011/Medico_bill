@@ -1,0 +1,13 @@
+node_modules/
+.env
+dist/
+build/
+*.exe
+*.log
+.md
+.zip
+.env
+./backend/.env
+./frontend/.env
+./backend/node_modules/
+./frontend/node_modules/

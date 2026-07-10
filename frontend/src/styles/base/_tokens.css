@@ -1,0 +1,46 @@
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-primary:       #1a5276;
+  --color-primary-light: #2980b9;
+  --color-primary-dark:  #154360;
+  --color-accent:        #27ae60;
+  --color-danger:        #c0392b;
+  --color-warning:       #e67e22;
+  --color-info:          #2980b9;
+
+  --color-bg:            #f4f6f8;
+  --color-surface:       #ffffff;
+  --color-border:        #d5d8dc;
+  --color-text:          #1c2833;
+  --color-text-muted:    #717d7e;
+  --color-sidebar-bg:    #1a2530;
+  --color-sidebar-text:  #ccd6dd;
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.12);
+
+  /* Font */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Consolas', 'Courier New', monospace;
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 14px;
+  --text-lg:   16px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+}
