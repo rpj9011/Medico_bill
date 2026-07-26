@@ -1,8 +1,17 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+function resolveBaseUrl() {
+  const configuredUrl = import.meta.env.VITE_API_BASE_URL;
+  if (configuredUrl) return configuredUrl;
 
-const api = axios.create({ baseURL: BASE_URL, timeout: 30_000 });
+  if (typeof window !== 'undefined' && window.location.protocol === 'file:') {
+    return 'http://localhost:3001/api';
+  }
+
+  return '/api';
+}
+
+const api = axios.create({ baseURL: resolveBaseUrl(), timeout: 30_000 });
 
 // Attach JWT on every request
 api.interceptors.request.use(config => {
@@ -11,11 +20,11 @@ api.interceptors.request.use(config => {
   return config;
 });
 
-// Handle 401 globally
+// Handle 401 globally, but skip the login page so auth failures surface normally.
 api.interceptors.response.use(
   res => res,
   err => {
-    if (err.response?.status === 401) {
+    if (err.response?.status === 401 && window.location.pathname !== '/login') {
       localStorage.removeItem('token');
       window.location.href = '/login';
     }
